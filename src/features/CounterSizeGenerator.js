@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function CounterSizeGenerator(props) {
-    const { updateSize } = props;
+    const { updateSize, resetSum } = props;
     const [size, setSize] = useState(0);
     const onSizeChange = (event) => {
         console.log("size change");
@@ -9,6 +9,7 @@ export default function CounterSizeGenerator(props) {
         const sizeValue = inputValue.length === 0 ? 0 : parseInt(inputValue);
         setSize(sizeValue);
         updateSize(sizeValue);
+        resetSum();
     };
     return (
         <div>

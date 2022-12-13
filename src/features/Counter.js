@@ -1,6 +1,6 @@
 // react fucntional component: rfc
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Counter(props) {
     const { updateSum } = props;
@@ -13,6 +13,10 @@ export default function Counter(props) {
         setNumber(number - 1);
         updateSum(-1);
     };
+    useEffect(() => {
+        setNumber(0);
+    }, [props.size]);
+
     return (
         <div>
             <button onClick={onIncrease}>+</button>

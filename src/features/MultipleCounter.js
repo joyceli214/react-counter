@@ -12,11 +12,16 @@ export default function MultipleCounter() {
     const updateSum = (change) => {
         setSum(sum + change);
     };
+
+    const resetSum = () => {
+        setSum(0);
+    };
+
     return (
         <div>
-            <CounterSizeGenerator updateSize={updateSize} />
+            <CounterSizeGenerator updateSize={updateSize} resetSum={resetSum} />
             <CounterGroupSum sum={sum} />
-            <CounterGroup size={size} sum={sum} updateSum={updateSum} />
+            <CounterGroup size={size} updateSum={updateSum} />
         </div>
     );
 }
